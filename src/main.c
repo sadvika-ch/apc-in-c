@@ -17,25 +17,35 @@ int main(int argc, char *argv[])
 
     switch(oper)
     {
-	case '+':
+	case '+':  //for addition
 		addition(tail1,tail2,&headR,&tailR);
 	    break;
 
-	case '-':
+	case '-':   //for subtraction
+		int ret=compare_list(head1,head2);
+		if(ret==OPERAND1)
+			subtraction(tail1,tail2,&headR,&tailR);
+		else if(ret==OPERAND2){
+			subtraction(tail2,tail1,&headR,&tailR);	
+			printf("-");
+		}
+		else	
+			insert_first(&headR,&tailR,0);
 	    break;
 
-	case 'x':
+	case 'x':  //for multiplication
 	case 'X':
+		multiplication(tail1,tail2,&headR,&tailR);
 	    break;
 
-	case '/':
+	case '/':  //for division
 	    break;
 
 	default:
 	    printf("Invalid operator\n");
     }
-	print_list(head1);
-	print_list(head2);
+	//printing the result 
+	printf("RESULT AFTER OPERATION : ");
 	print_list(headR);
 }
 
