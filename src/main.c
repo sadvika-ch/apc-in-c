@@ -39,6 +39,11 @@ int main(int argc, char *argv[])
 	    break;
 
 	case '/':  //for division
+		if(head2->data==0){
+			printf("Runtime error : Divide by zero\n");
+			return 0;
+		}
+		division(head1,head2,tail2,&headR,&tailR);
 	    break;
 
 	default:

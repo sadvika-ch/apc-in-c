@@ -23,7 +23,8 @@ typedef struct node
 void addition(node *tail1, node *tail2, node **headR, node **tailR);
 void subtraction(node *tail1, node *tail2, node **headR, node **tailR);
 void multiplication(node *tail1, node *tail2, node **headR, node **tailR);
-void division(node *head1, node *head2, node **headR, node **tailR);
+void division(node *headL1, node *headOPR2,node *tailOPR2, node **headR, node **tailR);
+
 
 int cla_validation(int argc, char *argv[]);
 void create_list(char *opr, node **head, node **tail);
