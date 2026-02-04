@@ -49,8 +49,12 @@ int main(int argc, char *argv[])
 	default:
 	    printf("Invalid operator\n");
     }
+	printf("========================================\n");
+	printf("             APC CALCULATOR             \n");
+	printf("========================================\n");
 	//printing the result 
-	printf("RESULT AFTER OPERATION : ");
+	printf("OPERATION : %s %s %s\n",argv[1],argv[2],argv[3]);
+	printf("RESULT : ");
 	print_list(headR);
 }
 
