@@ -17,16 +17,16 @@ void division(node *headL1, node *headOPR2,node * tailOPR2, node **headR, node *
         remove_pre_zeros(&headOPR1);
         while(compare_list(headOPR1,headOPR2)!=OPERAND2){  //here we taking help of subtraction to get the quotient
             subtraction(tailOPR1,tailOPR2,&head_SR,&tail_SR);   //calling subtraction func
-            count++;          //increasing
+            count++;          //increasing count which represents no.of substractions which is our desired result
             delete_list(&headOPR1,&tailOPR1);
             headOPR1=head_SR;
             tailOPR1=tail_SR;
-            head_SR=tail_SR=NULL;
+            head_SR=tail_SR=NULL;  //to reuse the same list again and again
         }
-        insert_last(headR,tailR,count);
+        insert_last(headR,tailR,count);  //inserting result to the result link
         temp=temp->next;
         if(temp)
-            insert_last(&headOPR1,&tailOPR1,temp->data);
+            insert_last(&headOPR1,&tailOPR1,temp->data);   //next digit
         else    
             break;    
     }

@@ -13,6 +13,22 @@
 #define OPERAND1	1
 #define OPERAND2	2
 
+
+// Text colors
+#define RED     "\033[31m"
+#define SKYBLUE "\033[38;5;117m"
+#define PURPLE  "\033[35m"
+#define PINK    "\033[38;5;213m"
+#define YELLOW  "\033[33m"
+
+
+#define WHITE    "\033[97m"  
+#define BLACK    "\033[30m"
+
+// Reset
+#define RESET   "\033[0m"
+
+
 typedef struct node
 {
     struct node *prev;
@@ -24,7 +40,6 @@ void addition(node *tail1, node *tail2, node **headR, node **tailR);
 void subtraction(node *tail1, node *tail2, node **headR, node **tailR);
 void multiplication(node *tail1, node *tail2, node **headR, node **tailR);
 void division(node *headL1, node *headOPR2,node *tailOPR2, node **headR, node **tailR);
-
 
 int cla_validation(int argc, char *argv[]);
 void create_list(char *opr, node **head, node **tail);

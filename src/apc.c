@@ -48,21 +48,25 @@ void remove_pre_zeros(node **head){  //to remove the zeros which are before numb
 //command line arguments validation
 int cla_validation(int argc, char *argv[]){  //validation function
     if(argc!=4){                             //arguments should be 4 . a.out,2 operands and 1 operator
-        printf("Invalid number of CLAs\n");
+        printf(RED"Invalid number of CLAs\n"RESET);
         return FAILURE;
     }
     int i=0;
+    if(argv[1][i]=='-' || argv[1][i] == '+')
+        i++;
     while(argv[1][i]){           //2nd argument should be all digits
         if(argv[1][i]<'0' || argv[1][i]>'9'){
-            printf("Invalid operand 1\n");
+            printf(RED"Invalid Operand 1\n"RESET);
             return FAILURE;
         }
         i++;
     }
     i=0;
+    if(argv[3][i]=='-' || argv[3][i] == '+')
+        i++;
     while(argv[3][i]){           //and 4th argument should be all digits
         if(argv[3][i]<'0' || argv[3][i]>'9'){
-            printf("Invalid operand 3\n");
+            printf(RED"Invalid Operand 3\n"RESET);
             return FAILURE;
         }
         i++;
@@ -74,6 +78,8 @@ int cla_validation(int argc, char *argv[]){  //validation function
 //creating lists
 void create_list(char *opr, node **head, node **tail){  //to create list with the numbers
     int i=0;
+    if(opr[i]=='-' || opr[i] == '+')
+        i++;
     while(opr[i]){
         insert_last(head,tail,opr[i]-48); // converting to digits because we are scanning through CLA(as strings)
         i++;
@@ -134,7 +140,7 @@ void print_list(node *head)   //to print the list
 	/* Cheking the list is empty or not */
 	if (head == NULL)
 	{
-		printf("INFO : List is empty\n");
+		printf(RED"INFO : List is empty\n"RESET);
 	}
 	else
 	{
